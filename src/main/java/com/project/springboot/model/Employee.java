@@ -1,17 +1,57 @@
 package com.project.springboot.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import jakarta.persistence.*;
 
 @Entity
+//@Table(JsonAutoDetect.Value = "Employee_Table")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String department;
+    private String hrDepartment;
+    private String mail;
+    private String createCardNumber;
+    private String accountNumber;
+
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getHrDepartment() {
+        return hrDepartment;
+    }
+
+    public void setHrDepartment(String hrDepartment) {
+        this.hrDepartment = hrDepartment;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getCreateCardNumber() {
+        return createCardNumber;
+    }
+
+    public void setCreateCardNumber(String createCardNumber) {
+        this.createCardNumber = createCardNumber;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     public int getId() {
         return id;
