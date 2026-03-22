@@ -60,15 +60,19 @@ public class EmployeeController {
     public CreditResponse apiTesting(@RequestBody RecordRequestPayload requestPayload) {
 
 
-        String creditCardMaskNumber = maskNumber(requestPayload.getCreditCardNumber());
-        requestPayload.setCreditCardNumber(creditCardMaskNumber);
+        try{
+            String creditCardMaskNumber = maskNumber(requestPayload.getCreditCardNumber());
+            requestPayload.setCreditCardNumber(creditCardMaskNumber);
 
-        recordRepoClass.save(requestPayload);
-        CreditResponse creditResponse = new CreditResponse();
-        creditResponse.setStatusCode(HttpStatus.OK);
-        creditResponse.setMessage("Data Successfully Store in DB");
-        return creditResponse;
-
+            recordRepoClass.save(requestPayload);
+            CreditResponse creditResponse = new CreditResponse();
+            creditResponse.setStatusCode(HttpStatus.OK);
+            creditResponse.setMessage("Data Successfully Store in DB");
+            return creditResponse;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     private String maskNumber(String creditCardNumber) {
