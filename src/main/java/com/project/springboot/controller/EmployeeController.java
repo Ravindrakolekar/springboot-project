@@ -1,5 +1,6 @@
 package com.project.springboot.controller;
 
+import com.project.springboot.model.CreditCardClass;
 import com.project.springboot.model.Employee;
 import com.project.springboot.repo.EmployeeRepo;
 import com.project.springboot.service.EmployeeService;
@@ -47,4 +48,10 @@ public class EmployeeController {
         return employeeService.deleteEmployee(id);
     }
 
+    @GetMapping("/creditCard")
+    public CreditCardClass creditCardApi(){
+
+        return new CreditCardClass(132345,"Nandkumar",123456789,789456);
+
+    }
 }
