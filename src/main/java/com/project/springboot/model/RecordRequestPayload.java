@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "Record")
 public class RecordRequestPayload {
@@ -16,6 +18,15 @@ public class RecordRequestPayload {
     private Integer accountNumber;
     private Integer debitCardNumber;
     private String  cardHolderName;
+    private String scerectKey;
+
+    public String getScerectKey() {
+        return scerectKey;
+    }
+
+    public void setScerectKey(String scerectKey) {
+        this.scerectKey = scerectKey;
+    }
 
     public Integer getCardNumber() {
         return cardNumber;

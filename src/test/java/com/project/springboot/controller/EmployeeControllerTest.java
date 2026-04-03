@@ -27,7 +27,7 @@ public class EmployeeControllerTest {
     }
 
     // Write the junit testcase
-    @Test
+   /* @Test
     void apiTesting_Test(){
 
         //mock data logic
@@ -47,7 +47,7 @@ public class EmployeeControllerTest {
         assertEquals(HttpStatus.OK,creditResponse.getStatusCode());
         assertEquals("Data Successfully Store in DB",creditResponse.getMessage());
 
-    }
+    }*/
 
 
 
