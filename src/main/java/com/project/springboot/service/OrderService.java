@@ -21,18 +21,18 @@ public class OrderService {
 
     public String placeOrder(int productId){
 
-        //Product product = productService.getProductByiId(productId);
+        Product product = productService.getProductByiId(productId);
 
         //logic microservice
         //String url = "http://localhost:8081/products/" + productId;
 
-        String url = baseUrl + productId;
+        //String url = baseUrl + productId;
 
 
 
-        Product product = restTemplate.getForObject(url, Product.class);
+        //Product product = restTemplate.getForObject(url, Product.class);
 
-        return "Order Placed for :: " + product.getProductName()+ "product Prize :: " +product.getProductPrize();
+        return "Order Placed for :: "+ product.getProductName();
 
     }
 

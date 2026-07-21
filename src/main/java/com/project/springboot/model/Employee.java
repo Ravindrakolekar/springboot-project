@@ -3,6 +3,8 @@ package com.project.springboot.model;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 //@Table(JsonAutoDetect.Value = "Employee_Table")
 public class Employee {
@@ -84,5 +86,16 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", department='" + department + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        Employee e = (Employee) obj;
+        return e.id == this.id ;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(id,name);
     }
 }
