@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: springboot-project
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username:
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
+
+external:
+  api:
+    calling: http://localhost:8081/products/
+
+
+billing:
+
+  hex-decoding:
+
+    # Global switch
+    enabled: true
+
+    # If true, invalid Hex input will result in HTTP 400
+    fail-on-invalid-hex: true
+
+    # Character encoding used after Hex decoding
+    charset: UTF-8
+
+    # ----------------------------------------------------------
+    # API specific configuration
+    # ----------------------------------------------------------
+    fields:
+      - name
+      - department
